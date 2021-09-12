@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+Status of Last Deployment <br>
+<img src="https://github.com/FilatovAlexey/acme-corp/workflows/Acme-corp-actions/badge.svg?branch=main">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
