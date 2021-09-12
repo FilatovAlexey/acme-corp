@@ -10,24 +10,19 @@ function App() {
   const [buttonPopup, setButtonPopup] = useState(false);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      if (fetching) {
-        const data = await fetch(
-          `http://localhost:8000/users?_limit=20&_page=${currentPage}`
-        )
-          .then((res) => {
-            return res.json();
-          })
-          .then((data) => {
-            setUsers([...users, ...data]);
-            setCurrentPage((prevState) => prevState + 1);
-          })
-          .finally(() => {
-            setFetching(false);
-          });
-      }
-    };
-    fetchUsers();
+    if (fetching) {
+      fetch(`http://localhost:8000/users?_limit=20&_page=${currentPage}`)
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setUsers([...users, ...data]);
+          setCurrentPage((prevState) => prevState + 1);
+        })
+        .finally(() => {
+          setFetching(false);
+        });
+    }
   }, [fetching]);
 
   useEffect(() => {
