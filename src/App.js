@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import Popup from './components/popup';
 import Users from './components/users';
@@ -49,8 +50,6 @@ function App() {
   };
 
   const handleDelete = (userId) => {
-    console.log(userId);
-    debugger;
     setUsers(users.filter((user) => user.id !== userId));
   };
 
