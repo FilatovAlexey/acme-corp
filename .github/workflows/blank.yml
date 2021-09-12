@@ -28,5 +28,10 @@ jobs:
       - name: Print Hello, World
         run: echo "Hello, world!"
 
+      - name: Git Clone my repo
+        uses: actions/checkout@v1
+        
+      - name: List Current Folder
+        run: ls -la
       # Runs a set of commands using the runners shell
       
