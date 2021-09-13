@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Popup from './components/popup';
 import Users from './components/users';
 import Form from './components/form';
-
+let lastIdUsers = 32; // HARDCODE!
 function App() {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,8 +35,9 @@ function App() {
 
   const handleCreateForm = (value) => {
     setButtonPopup(false);
-    let lastIdUsers = 32; // HARDCODE!
+    debugger;
     value.id = lastIdUsers + 1;
+    lastIdUsers++;
     setUsers([...users, value]);
 
     fetch(` http://localhost:8000`, {
